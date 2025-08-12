@@ -1,6 +1,4 @@
 
-# DDH-based Private Intersection-Sum Protocol 实验报告
-
 ## 1. 算法原理
 
 ### 1.1 协议概述
