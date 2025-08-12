@@ -62,10 +62,10 @@
 
 ## 实验结果
 ### SM4运行结果
-
+![main.cpp 运行结果](result/main.png)
 ### SM4查表运行结果
-
+![sm4_table.cpp](result/table.png)
 ### SM4_AES_NI运行结果
-
+![sm4-AESNI.cpp 运行结果](result/AESNI.png)
 ### SM4_GCM运行结果
-
+![SM4-GCM运行结果](result/GCM.png)
