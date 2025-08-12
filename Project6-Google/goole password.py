@@ -57,7 +57,7 @@ class Func: # 基础函数类
         return private_key.decrypt(ciphertext)
 
 class P1(Func):
-    def __init__(self,password={"你好，我是你爹","你是谁？", "你是谁？我是谁？", "你是谁？我是谁？你是谁？", "你是谁？我是谁？你是谁？我是谁？"}):
+    def __init__(self,password={"春天在哪里呀", "小鸟说早早早", "我家住在黄土高坡","小呀么小二郎", "让我们荡起双桨"}): # 密码集合
         self.password = password
         self.k1= self.generate_private_key()
 
@@ -83,7 +83,9 @@ class P1(Func):
         return sum  # 返回sum
 
 class P2(Func):
-    def __init__(self,password={("你好，我是你娘",10),("你是谁？",50), ("你是谁？我是谁？",100),("你是我儿子吗？",160), ("你是谁？我是你娘？你是谁？我是你娘？",520)}):
+    def __init__(self,password={("晚安，世界",10),("你好，早安",50), ("晴空万里",100),("海阔天空",160), 
+                                 ("心想事成",520),  # 新增一个 P1 中有的密码
+                                 ("让我们荡起双桨", 200)}): # 密码集合和用户价值
         self.password = password
         self.k2= self.generate_private_key()
         self.pk,self.sk = self.generate_key_pair()  # 生成公私钥对

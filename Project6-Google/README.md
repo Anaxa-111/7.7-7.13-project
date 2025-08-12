@@ -254,4 +254,4 @@ print(f"交集数值总和: {output}")
 
 ## 测试结果
 ![result](result.png)
-可以看到，两个password的交集为'你是谁？'和'你是谁？我是谁？'，分别对应value为50和100，交集为150
+可以看到，两个password的交集为200.
