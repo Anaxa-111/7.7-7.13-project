@@ -84,7 +84,7 @@ Input:                                         Input:
 - **语义安全**：Paillier加密保证数值的语义安全
 - **随机化**：防止通过顺序推断数据关联
 
-## 2. 代码实现特点
+## 2. 代码实现
 
 ### 2.1 优化方案
 
@@ -136,25 +136,12 @@ sum += pair[1]  # 密文的同态加法
 
 ---
 
-# README
 
-## 项目简介
+## 实验简介
 
 这是一个基于DDH假设的私有交集求和协议的Python实现。该协议允许两方在保护各自隐私的前提下，计算其标识符集合交集对应数值的总和。
 
-## 功能特性
 
--  基于DDH假设的安全多方计算
--  支持私有集合求交
--  同态加密保护数值隐私
--  抗流量分析的随机化处理
--  密码学安全的随机数生成
-
-## 依赖库
-
-```bash
-pip install sympy pycryptodome phe
-```
 
 ## 核心接口
 
@@ -192,42 +179,6 @@ class P2(Func):
 ```
 
 
-### 完整测试代码
-
-```python
-def test_protocol():
-    Func.setup()
-    p1 = P1()
-    p2 = P2()
-    
-    # 三轮交互
-    hash_list = p1.round1()
-    p2.round1(hash_list)
-    print("第一轮交互完成")
-    
-    Z, hash_list = p2.round2()
-    p1.round2(Z, hash_list)
-    print("第二轮交互完成")
-    
-    sum_encrypted = p1.round3()
-    result = p2.round3(sum_encrypted)
-    print("交互协议完成")
-    
-    return p1.password, p2.password, result
-
-# 运行测试
-passwd1, passwd2, output = test_protocol()
-print(f"P1密码集合: {passwd1}")
-print(f"P2密码集合: {passwd2}")
-print(f"交集数值总和: {output}")
-```
-
-## 参数说明
-
-- `bits`: 大素数的位数，默认1024位，影响安全性
-- `password`: 输入数据集合
-  - P1: 字符串集合
-  - P2: (字符串, 数值)对的集合
 
 ## 安全考虑
 
@@ -243,13 +194,5 @@ print(f"交集数值总和: {output}")
 - 通信复杂度: $O(m_1 + m_2)$
 - 适用场景: 中等规模的私有数据求交场景
 
-## 注意事项
-
-1. 协议需要可信的通信信道
-2. 大素数位数越高安全性越好，但计算开销也越大
-3. 建议在生产环境中使用更长的密钥长度
-4. 测试数据包含中文字符，验证Unicode支持
-
 ## 测试结果
-![result](result.png)
-可以看到，两个password的交集为200.
+![测试结果](result.png)
