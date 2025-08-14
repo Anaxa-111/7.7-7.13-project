@@ -161,7 +161,7 @@ def sm3_hash(message: bytes) -> bytearray:
 
 
 if __name__ == '__main__':
-    input_str = "202200460096"
+    input_str = "123456789"
     print(f"Input= {input_str}")
     hash_result = sm3_hash(input_str.encode('utf-8'))
     print("Result= ", end="")
