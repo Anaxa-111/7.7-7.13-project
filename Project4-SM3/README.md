@@ -3,8 +3,8 @@
 ## 实验过程
 ### 1. SM3 基本实现与性能优化
 
-- 使用 `SM3.cpp` 实现 SM3 哈希算法的基础版本，验证功能正确性。
-- 基于付勇老师 PPT，使用 SIMD/AVX2 技术在 `SM3_SIMD.cpp` 中实现优化
+- 使用 `SM3.py` 实现 SM3 哈希算法的基础版本，验证功能正确性。
+- 基于付勇老师 PPT，使用 SIMD/AVX2 技术在 `SM3_SIMD.py` 中实现优化
 
 ### 2. Length-extension Attack
 - 原理：SM3 属于 Merkle–Damgård 构造，内部状态等同于哈希输出，处理分组大小为 512bit，每次压缩产生 256bit 输出。
@@ -29,7 +29,7 @@
 - 不存在性证明细节：
   - 在有序叶子列表中查找目标位置 `i`，若值不匹配，则定位在两个相邻叶子之间。
   - 对相邻叶子生成存在性证明，证明该索引已被占据，间接说明目标数据不存在。
-- 代码验证：在 `SM3_MT.cpp` 中打印根哈希、存在性与不存在性证明结果，并检查验证函数输出。
+- 代码验证：在 `SM3_MT.py` 中打印根哈希、存在性与不存在性证明结果，并检查验证函数输出。
 
 ## 实验结果
 ### SM3结果
@@ -37,7 +37,7 @@
 ### SM3_SIMD结果
 ![alt text](result/SM3_SIMD.png)
 ### Length-extension Attack结果
-![alt text](result/attack.png)
+![alt text](result/SM3_attack.png)
 ### Merkle Tree结果
 ![alt text](result/MT.png)
 
