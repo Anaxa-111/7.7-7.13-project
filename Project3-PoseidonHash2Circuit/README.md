@@ -1,4 +1,4 @@
-# 用circom实现poseidon2哈希算法的电路
+# 实验3报告
 
 ## 任务概述
 
@@ -135,7 +135,7 @@ snarkjs groth16 verify \
   build/proof.json
 ```
 可以看到验证成功：
-![零知识证明结果](images/zkoutput.png)
+![零知识证明结果](images/result.png)
 
 ```
 ```
