@@ -1,4 +1,3 @@
-# watermark_algorithms.py
 import numpy as np
 import cv2
 import pywt  # 需要安装 pywavelets: pip install pywavelets
