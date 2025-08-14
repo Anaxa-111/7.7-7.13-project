@@ -5,11 +5,11 @@ from robustness_test import RobustnessTest, create_sample_images # 导入 create
 
 if __name__ == '__main__':
     # 检查示例图像是否存在，如果不存在，则创建.
-    if not os.path.exists("sample_images/host_image.png") or not os.path.exists("sample_images/watermark.png"):
+    if not os.path.exists("pic/pic.png") or not os.path.exists("pic/log.png"):
         host_image_path, watermark_path = create_sample_images()  # 创建图片
     else:
-        host_image_path = "sample_images/host_image.png"
-        watermark_path = "sample_images/watermark.png"
+        host_image_path = "pic/pic.png"
+        watermark_path = "pic/log.png"
 
     # 初始化鲁棒性测试器
     robustness_tester = RobustnessTest()
